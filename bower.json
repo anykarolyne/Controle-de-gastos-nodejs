@@ -1,0 +1,28 @@
+{
+  "name": "carteira",
+  "description": "Gerenciar minha carteira",
+  "main": "index.js",
+  "authors": [
+    "Guilherme Ferreira"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "carteira",
+    "dinheiro"
+  ],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.3",
+    "bootstrap": "^3.3.7",
+    "angular-bootstrap": "^2.5.0",
+    "socket.io-client": "^1.7.2",
+    "highcharts-ng": "^1.1.0"
+  }
+}

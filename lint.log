@@ -1,0 +1,31 @@
+
+C:\Users\ferre\Desktop\New folder\carteira\index.js
+  25:5  error  'itemsAPI' is assigned a value but never used  no-unused-vars
+
+C:\Users\ferre\Desktop\New folder\carteira\server\items-api.js
+   74:13  error  'i' is already defined  no-redeclare
+  116:13  error  'i' is already defined  no-redeclare
+  141:2   error  Mixed spaces and tabs   no-mixed-spaces-and-tabs
+  151:13  error  Empty block statement   no-empty
+  153:2   error  Mixed spaces and tabs   no-mixed-spaces-and-tabs
+  154:2   error  Mixed spaces and tabs   no-mixed-spaces-and-tabs
+  156:2   error  Mixed spaces and tabs   no-mixed-spaces-and-tabs
+  157:2   error  Mixed spaces and tabs   no-mixed-spaces-and-tabs
+  159:2   error  Mixed spaces and tabs   no-mixed-spaces-and-tabs
+
+C:\Users\ferre\Desktop\New folder\carteira\view\app.controller.js
+   7:30  error  '$http' is defined but never used        no-unused-vars
+   9:6   error  'vm' is assigned a value but never used  no-unused-vars
+  18:2   error  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  19:2   error  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+
+C:\Users\ferre\Desktop\New folder\carteira\view\carteira\carteira.controller.js
+  28:30  error  'saldo' is defined but never used   no-unused-vars
+  30:2   error  Mixed spaces and tabs               no-mixed-spaces-and-tabs
+  83:36  error  'indice' is defined but never used  no-unused-vars
+
+C:\Users\ferre\Desktop\New folder\carteira\view\relatorio\relatorio.controller.js
+  9:6  error  'vm' is assigned a value but never used  no-unused-vars
+
+✖ 18 problems (18 errors, 0 warnings)
+

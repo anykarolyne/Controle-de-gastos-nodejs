@@ -1,0 +1,28 @@
+<div class="col-md-6 col-sm-12">
+
+    <table class="table table-condensed">
+        <thead>
+            <tr>
+                <th> Nome</th>
+                <th> Valor</th>
+                <th> Tipo</th>
+                <th> Relevância/Fonte</th>
+                <th> Data</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-if="!items || !items.length || items.length == 0">
+                <td colspan="8">Nenhum Item</td>
+            </tr>
+            <tr ng-repeat="(key, item) in items">
+                <td>{{ item.nome }}</td>
+                <td>{{ item.valor }}</td>
+                <td>{{ item.tipo }}</td>
+                <td ng-if="item.tipo == 'despesa'">{{ relevancia[item.relevancia] }}</td>
+                <td ng-if="item.tipo == 'receita'">{{ item.fonte }}</td>
+                <td>{{ item.data | date: 'fullDate' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>

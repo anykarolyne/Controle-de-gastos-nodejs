@@ -1,0 +1,111 @@
+<div class="col-md-8 col-sm-12">
+
+    <form name="form">
+
+        <div class="col-md-8">
+            <div class="form-group">
+                <label for="nome">Nome</label>
+                <input type="text" ng-model="formConta.nome" class="form-control" name="nome" id="nome"
+                       placeholder="Nome" required>
+            </div>
+
+            <div class="form-group">
+                <label for="valor">Valor</label>
+                <input type="number" min="0" ng-model="formConta.valor" class="form-control" name="valor" id="valor"
+                       placeholder="Valor" required>
+            </div>
+
+            <div class="radio">
+                <label>
+                    <input type="radio" name="optionsRadios" ng-model="formConta.tipo" id="optionsRadios1"
+                           value="receita" checked> Receita
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                    <input type="radio" name="optionsRadios" ng-model="formConta.tipo" id="optionsRadios2"
+                           value="despesa"> Despesa
+                </label>
+            </div>
+
+            <div class="form-group" ng-if="formConta.tipo == 'receita'">
+                <label for="fonte">Fonte</label>
+                <input type="text" ng-model="formConta.fonte" class="form-control" name="fonte" id="fonte"
+                       placeholder="Fonte" required>
+            </div>
+
+            <div class="form-group" ng-if="formConta.tipo == 'despesa'">
+
+                <label for="relevancia">Relevância (
+
+                    <span ng-if="formConta.relevancia == 0" for="relevancia">Minima</span>
+                    <span ng-if="formConta.relevancia == 1" for="relevancia">Normal</span>
+                    <span ng-if="formConta.relevancia == 2" for="relevancia">útil</span>
+                    <span ng-if="formConta.relevancia == 3" for="relevancia">Máxima</span> )
+
+
+                </label>
+                <input type="range" min="0" max="3" step="1" ng-model="formConta.relevancia" class="form-control"
+                       id="relevancia" placeholder="Relevância">
+
+
+            </div>
+        </div>
+        <div class="col-md-2">
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+
+                <div class="form-group">
+                    <label for="data">Data</label>
+                    <div uib-datepicker name="data" ng-model="formConta.data" datepicker-options="options"></div>
+                </div>
+
+                <button type="submit" class="btn btn-default" ng-disabled="form.$invalid"
+                        ng-click="cController.actionClickSubmit(formConta)">Submit
+                </button>
+
+            </div>
+        </div>
+    </form>
+</div>
+<div class="row">
+    <div class="panel-body">
+            <table class="table">
+            <thead>
+                <tr>
+                    <th> Nome</th>
+                    <th> Valor</th>
+                    <th> Tipo</th>
+                    <th> Relevância/Fonte</th>
+                    <th> Data</th>
+                    <th> Editar</th>
+                    <th> Remover</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-if="!items || !items.length || items.length == 0">
+                    <td colspan="8">Nenhum Item</td>
+                </tr>
+                <tr ng-repeat="(key, item) in items">
+                    <td>{{ item.nome }}</td>
+                    <td>{{ item.valor }}</td>
+                    <td>{{ item.tipo }}</td>
+                    <td ng-if="item.tipo == 'despesa'">{{ relevancia[item.relevancia] }}</td>
+                    <td ng-if="item.tipo == 'receita'">{{ item.fonte }}</td>
+                    <td>{{ item.data | date: 'fullDate' }}</td>
+                    <td>
+                        <button class="btn btn-sm btn-warning glyphicon glyphicon-pencil"
+                                ng-click="cController.actionClickEdit(item, key)"></button>
+                    </td>
+                    <td>
+                        <button class="btn btn-sm btn-danger glyphicon glyphicon-remove"
+                                ng-click="cController.actionClickRemove(item, key)"></button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
