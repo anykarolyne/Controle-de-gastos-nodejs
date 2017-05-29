@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('app').controller('CarteiraController', controller);
+angular.module('app').controller('ContatoController', controller);
 
 controller.$inject = ['$scope', '$http'];
 
@@ -8,11 +8,6 @@ function controller ($scope, $http) {
 
 	var vm = this;
 	
-	$scope.relevancia = [
-		'Baixa',
-		'Normal',
-		'Alta'
-	];
 
 	var socket = io('http://localhost:3000');
 
@@ -20,37 +15,22 @@ function controller ($scope, $http) {
 	vm.actionClickEdit = actionClickEdit;
 	vm.actionClickRemove = actionClickRemove;
 
-	cleanForm();
-	loadListOfItems();
+	loadListOfContatos();
 
-	socket.on('saldo', function(saldo){
-		// se houve alterações, atualiza minha lista toda
-	    loadListOfItems();
-	});
-	
-	function loadListOfItems() {
+	function loadListOfContatos() {
 
-		$scope.items = [];
+		$scope.contatos = [];
 
 		$http.get('./api/items').then(function(response){
-			$scope.items = response.data;
+			$scope.contatos = response.data;
 		});
 	}
 
-	function cleanForm () {
-		var now = new Date();
 
-		$scope.formConta = {
-			relevancia: 2,
-			tipo: 'despesa',
-			data: now,
-			time: now
-		};
-	}
 
 	function actionClickSubmit (item) {
 
-		if(item._id){
+		if(contato._id){
 
             /**
 			 * SE TEM ID, ENTÃO JÁ FOI SALVO NO BANCO
@@ -71,19 +51,18 @@ function controller ($scope, $http) {
 
 		}
 
-		cleanForm();
+	
 	}
 
 	function actionClickEdit (item) {
-		$scope.formConta = angular.copy(item);
+		$scope.formContato = angular.copy(contato);
 	}
 
 	function actionClickRemove (item, indice) {
 
-		$http.delete('./api/item', item).then(function(response){
+		$http.delete('./api/item', contato).then(function(response){
 			console.log(response);
 		});
 
-		// $scope.items.splice(indice, 1);
 	}
 }

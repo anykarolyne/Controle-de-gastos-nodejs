@@ -31,10 +31,9 @@ module.exports = function (app, socket) {
 	});
 
 	var relevancia = [
-		'Minima',
+		'Baixa',
 		'Normal',
-		'Útil',
-		'Máxima'
+		'Alta'
 	];
 
 	app.get('/api/gastos-por-relevancia', function (req, res) {

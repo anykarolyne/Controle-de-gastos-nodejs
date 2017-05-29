@@ -12,9 +12,9 @@
     "carteira",
     "dinheiro"
   ],
-  "author": "Guilherme Ferreira",
+  "author": "Any Karolyne",
   "license": "ISC",
-  "devDependencies": {
+  "devDependencies": {  
     "bower": "^1.8.0",
     "eslint": "^3.19.0"
   },
@@ -22,6 +22,8 @@
     "body-parser": "^1.17.1",
     "express": "^4.15.2",
     "mongoose": "^4.9.2",
-    "socket.io": "^1.7.3"
+    "socket.io": "^1.7.3",
+    "passport": "~0.2.0",
+    "passport-local": "~1.0.0"
   }
 }

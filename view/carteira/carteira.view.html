@@ -4,15 +4,15 @@
 
         <div class="col-md-8">
             <div class="form-group">
-                <label for="nome">Nome</label>
+                <label for="nome">Descrição</label>
                 <input type="text" ng-model="formConta.nome" class="form-control" name="nome" id="nome"
-                       placeholder="Nome" required>
+                       placeholder="Ex: Aluguel" required>
             </div>
-
-            <div class="form-group">
-                <label for="valor">Valor</label>
+            <div class="input-group">
+                <span class="input-group-addon">R$</span>
                 <input type="number" min="0" ng-model="formConta.valor" class="form-control" name="valor" id="valor"
                        placeholder="Valor" required>
+                <span class="input-group-addon">,00</span>
             </div>
 
             <div class="radio">
@@ -38,14 +38,13 @@
 
                 <label for="relevancia">Relevância (
 
-                    <span ng-if="formConta.relevancia == 0" for="relevancia">Minima</span>
+                    <span ng-if="formConta.relevancia == 0" for="relevancia">Baixa</span>
                     <span ng-if="formConta.relevancia == 1" for="relevancia">Normal</span>
-                    <span ng-if="formConta.relevancia == 2" for="relevancia">útil</span>
-                    <span ng-if="formConta.relevancia == 3" for="relevancia">Máxima</span> )
+                    <span ng-if="formConta.relevancia == 2" for="relevancia">Alta</span>)
 
 
                 </label>
-                <input type="range" min="0" max="3" step="1" ng-model="formConta.relevancia" class="form-control"
+                <input type="range" min="0" max="2" step="1" ng-model="formConta.relevancia" class="form-control"
                        id="relevancia" placeholder="Relevância">
 
 
