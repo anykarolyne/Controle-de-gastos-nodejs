@@ -20,6 +20,6 @@ function controller ($scope, $http) {
 	});
 
 	$scope.showCarteira = true;
-
+	
 	$scope.saldo = '???';
 }

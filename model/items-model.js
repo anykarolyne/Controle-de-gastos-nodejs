@@ -7,5 +7,8 @@ module.exports = {
 	data: String,
 	time: String,
 	nome: String,
-	valor: Number
+	valor: Number,
+	nomeContato: String,
+	telContato: String,
+	emailContato: String
 };
