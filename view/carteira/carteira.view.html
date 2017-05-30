@@ -1,12 +1,51 @@
+<div class="form-group" ng-if="formConta.tipo == 'despesa'">
+    <h1><center> DESPESA </center></h1>
+</div>
+<div class="form-group" ng-if="formConta.tipo == 'receita'">
+    <h1><center> RECEITA </center></h1>
+</div> </br></br>
 <div class="col-md-8 col-sm-12">
-
     <form name="form">
-
+    
         <div class="col-md-8">
-            <div class="form-group">
+            <div class="form-group" ng-if="formConta.tipo == 'despesa'">
                 <label for="nome">Descrição</label>
                 <input type="text" ng-model="formConta.nome" class="form-control" name="nome" id="nome"
                        placeholder="Ex: Aluguel" required>
+            </div>
+            <div class="form-group" ng-if="formConta.tipo == 'receita'">
+                <label for="nome">Descrição</label>
+                <input type="text" ng-model="formConta.nome" class="form-control" name="nome" id="nome"
+                       placeholder="Ex: Formatei um computador" required>
+            </div>
+            <label for="contaBancaria">Conta Bancária</label>
+            <div class="form-group">
+                <select class="form-control" name="contaBancaria">
+                    <option>Itaú</option>
+                    <option>Banco do Brasil</option>
+                </select>
+            </div>
+            <div class="form-group" ng-if="formConta.tipo == 'despesa'">
+                <label for="contato">Pagar para:</label>
+                <div class="form-group">
+                    <select class="form-control" name="contato">
+                        <option>Clayton</option>
+                        <option>Felipe</option>
+                        <option>Matheus</option>
+                        <option>Henrique</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group" ng-if="formConta.tipo == 'receita'">
+                <label for="contato">Receber de:</label>
+                <div class="form-group">
+                    <select class="form-control" name="contato">
+                        <option>Clayton</option>
+                        <option>Felipe</option>
+                        <option>Matheus</option>
+                        <option>Henrique</option>
+                    </select>
+                </div>
             </div>
             <div class="input-group">
                 <span class="input-group-addon">R$</span>
@@ -31,16 +70,16 @@
             <div class="form-group" ng-if="formConta.tipo == 'receita'">
                 <label for="fonte">Fonte</label>
                 <input type="text" ng-model="formConta.fonte" class="form-control" name="fonte" id="fonte"
-                       placeholder="Fonte" required>
+                       placeholder="Ex: Serviço" required>
             </div>
 
             <div class="form-group" ng-if="formConta.tipo == 'despesa'">
                 
-                <label for="relevancia">Relevância (
+                <label for="relevancia">Relevância    
 
-                    <span ng-if="formConta.relevancia == 0" for="relevancia">Baixa</span>
-                    <span ng-if="formConta.relevancia == 1" for="relevancia">Normal</span>
-                    <span ng-if="formConta.relevancia == 2" for="relevancia">Alta</span> )
+                    <span class="fileinput btn-success" ng-if="formConta.relevancia == 0" for="relevancia"> Baixa</span>
+                    <span class="fileinput btn-warning" ng-if="formConta.relevancia == 1" for="relevancia"> Normal</span>
+                    <span class="fileinput btn-danger" ng-if="formConta.relevancia == 2" for="relevancia"> Alta</span> 
 
 
                 </label>

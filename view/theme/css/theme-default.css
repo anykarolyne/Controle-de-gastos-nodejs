@@ -44,7 +44,7 @@ body {
   min-height: 100%;
   padding: 0px;
   margin: 0px;
-  background: #f5f5f5 url('../img/bg.png') left top repeat;
+  background: #f5f5f5 url('theme/img/bg.png') left top repeat;
   position: relative;
   font-family: 'Open Sans', sans-serif;
   font-size: 12px;
@@ -105,7 +105,7 @@ body {
 .page-container .page-content {
   min-height: 100%;
   margin-left: 220px;
-  background: #f5f5f5 url('../img/bg.png') left top repeat;
+  background: #f5f5f5 url('theme/img/bg.png') left top repeat;
   position: relative;
   zoom: 1;
 }
@@ -121,7 +121,7 @@ body {
   float: left;
   width: 100%;
   position: relative;
-  background: #f5f5f5 url('../img/bg.png') left top repeat;
+  background: #f5f5f5 url('theme/img/bg.png') left top repeat;
 }
 .page-container .page-content .content-frame .content-frame-top {
   float: left;
@@ -1428,6 +1428,7 @@ a.list-group-item:focus {
 }
 .panel.panel-default {
   border-top-color: #F5F5F5;
+  background: #E8E8E8 url('theme/img/bg.png') left top repeat;
   border-top-width: 1px;
 }
 .panel.panel-primary {
@@ -3871,7 +3872,7 @@ background: #1caf9a !important;
   float: left;
   width: 100%;
   min-height: 100%;
-  background: url("../img/bg.png") left top repeat #1b1e24;
+  background: url("theme/img/bg.png") left top repeat #1b1e24;
 }
 .login-container .login-box {
   width: 400px;
