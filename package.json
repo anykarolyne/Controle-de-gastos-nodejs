@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "Gerenciar minha carteira",
   "main": "index.js",
+  "repository": {
+  "type": "git",
+  "url": "https://github.com/anykarolyne/Controle-de-gastos-nodejs.git"
+  },
   "scripts": {
     "start": "node index.js",
     "lint": "eslint . --fix >  lint.log",
