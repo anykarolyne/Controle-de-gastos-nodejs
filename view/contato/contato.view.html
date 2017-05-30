@@ -25,3 +25,35 @@
         </div>
     </form>
 </div>
+
+<div class="row">
+    <div class="panel-body">
+            <table class="table">
+            <thead>
+                <tr>
+                    <th> Nome</th>
+                    <th> Telefone</th>
+                    <th> E-mail</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-if="!items || !items.length || items.length == 0">
+                    <td colspan="8">Nenhum contato</td>
+                </tr>
+                <tr ng-repeat="(key, item) in items">
+                    <td>{{ item.nomeContato }}</td>
+                    <td>{{ item.telContato }}</td>
+                    <td>{{ item.emailContato }}</td>
+                    <td>
+                        <button class="btn btn-sm btn-warning glyphicon glyphicon-pencil"
+                                ng-click="contController.actionClickEdit(item, key)"></button>
+                    </td>
+                    <td>
+                        <button class="btn btn-sm btn-danger glyphicon glyphicon-remove"
+                                ng-click="contController.actionClickRemove(item, key)"></button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
